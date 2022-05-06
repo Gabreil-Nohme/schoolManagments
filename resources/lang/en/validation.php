@@ -2,6 +2,14 @@
 
 return [
 
+
+
+    'name_ar_require'=>'please input name in arabic',
+    'name_en_require'=>'please input name in english',
+    'name_en_min'=>'morrrrree',
+    'name_ar_unique'=>'this grade is exists(grades in arabic)',
+    'name_en_unique'=>'this grade is exists(grades in english)',
+
     /*
     |--------------------------------------------------------------------------
     | Validation Language Lines

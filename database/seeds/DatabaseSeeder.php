@@ -1,5 +1,9 @@
 <?php
 
+use App\Models\Blood;
+use App\Models\Nationalitie;
+use App\Models\Specialization;
+use App\Models\Gender;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -11,6 +15,13 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UserSeeder::class);
+         $this->call(BloodTableSeeder::class);
+         $this->call(NatiolatiesTableSeeder::class);
+         $this->call(ReligionTableSeeder::class);
+         $this->call(GradeTableSeeder::class);
+         $this->call(GenderTableSeeder::class);
+         $this->call(SpecializationTableSeeder::class);
+
+
     }
 }
