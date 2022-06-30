@@ -4,6 +4,8 @@ namespace App\Repository;
 use App\Models\Teacher;
 
 interface TeacherRepositoryInterface{
+
+    public function DashboardTeacher();
     //get all teachers
     public function getAllTeachers();
 

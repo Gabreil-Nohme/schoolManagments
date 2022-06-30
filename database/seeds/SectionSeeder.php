@@ -1,0 +1,162 @@
+<?php
+
+use App\Models\Section;
+use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+
+class SectionSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        DB::table('sections')->delete();
+        Section::create(
+            ['name_section'=>['ar'=>'أ','en'=>'A'],
+            'status'=>1,
+            'grade_id'=>1,
+            'class_id'=>1,
+    ]);
+    Section::create(
+        ['name_section'=>['ar'=>'ب','en'=>'B'],
+        'status'=>1,
+        'grade_id'=>1,
+        'class_id'=>1,
+]);
+Section::create(
+    ['name_section'=>['ar'=>'أ','en'=>'A'],
+    'status'=>1,
+    'grade_id'=>1,
+    'class_id'=>2,
+]);
+Section::create(
+['name_section'=>['ar'=>'ب','en'=>'B'],
+'status'=>1,
+'grade_id'=>1,
+'class_id'=>2,
+]);
+Section::create(
+    ['name_section'=>['ar'=>'أ','en'=>'A'],
+    'status'=>1,
+    'grade_id'=>1,
+    'class_id'=>3,
+]);
+Section::create(
+['name_section'=>['ar'=>'ب','en'=>'B'],
+'status'=>1,
+'grade_id'=>1,
+'class_id'=>3,
+]);
+Section::create(
+    ['name_section'=>['ar'=>'أ','en'=>'A'],
+    'status'=>1,
+    'grade_id'=>1,
+    'class_id'=>4,
+]);
+Section::create(
+['name_section'=>['ar'=>'ب','en'=>'B'],
+'status'=>1,
+'grade_id'=>1,
+'class_id'=>4,
+]);
+Section::create(
+    ['name_section'=>['ar'=>'أ','en'=>'A'],
+    'status'=>1,
+    'grade_id'=>1,
+    'class_id'=>5,
+]);
+Section::create(
+['name_section'=>['ar'=>'ب','en'=>'B'],
+'status'=>1,
+'grade_id'=>1,
+'class_id'=>5,
+]);
+Section::create(
+    ['name_section'=>['ar'=>'أ','en'=>'A'],
+    'status'=>1,
+    'grade_id'=>1,
+    'class_id'=>6,
+]);
+Section::create(
+['name_section'=>['ar'=>'ب','en'=>'B'],
+'status'=>1,
+'grade_id'=>1,
+'class_id'=>6,
+]);
+Section::create(
+    ['name_section'=>['ar'=>'أ','en'=>'A'],
+    'status'=>1,
+    'grade_id'=>2,
+    'class_id'=>7,
+]);
+Section::create(
+['name_section'=>['ar'=>'ب','en'=>'B'],
+'status'=>1,
+'grade_id'=>2,
+'class_id'=>7,
+]);
+Section::create(
+    ['name_section'=>['ar'=>'أ','en'=>'A'],
+    'status'=>1,
+    'grade_id'=>2,
+    'class_id'=>8,
+]);
+Section::create(
+['name_section'=>['ar'=>'ب','en'=>'B'],
+'status'=>1,
+'grade_id'=>2,
+'class_id'=>8,
+]);
+Section::create(
+    ['name_section'=>['ar'=>'أ','en'=>'A'],
+    'status'=>1,
+    'grade_id'=>2,
+    'class_id'=>9,
+]);
+Section::create(
+['name_section'=>['ar'=>'ب','en'=>'B'],
+'status'=>1,
+'grade_id'=>2,
+'class_id'=>9,
+]);
+Section::create(
+    ['name_section'=>['ar'=>'أ','en'=>'A'],
+    'status'=>1,
+    'grade_id'=>3,
+    'class_id'=>10,
+]);
+Section::create(
+['name_section'=>['ar'=>'ب','en'=>'B'],
+'status'=>1,
+'grade_id'=>3,
+'class_id'=>10,
+]);
+Section::create(
+    ['name_section'=>['ar'=>'أ','en'=>'A'],
+    'status'=>1,
+    'grade_id'=>3,
+    'class_id'=>11,
+]);
+Section::create(
+['name_section'=>['ar'=>'ب','en'=>'B'],
+'status'=>1,
+'grade_id'=>3,
+'class_id'=>11,
+]);
+Section::create(
+    ['name_section'=>['ar'=>'أ','en'=>'A'],
+    'status'=>1,
+    'grade_id'=>3,
+    'class_id'=>12,
+]);
+Section::create(
+['name_section'=>['ar'=>'ب','en'=>'B'],
+'status'=>1,
+'grade_id'=>3,
+'class_id'=>12,
+]);
+    }
+}

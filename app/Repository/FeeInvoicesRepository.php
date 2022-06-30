@@ -70,7 +70,7 @@ class FeeInvoicesRepository implements FeeInvoicesRepositoryInterface
             DB::commit();
 
             toastr()->success(trans('messages.success'));
-            return redirect()->route('Fees_Invoices.index');
+            return redirect()->route('FeeInvoices.index');
         } catch (\Exception $e) {
             DB::rollback();
             return redirect()->back()->withErrors(['error' => $e->getMessage()]);
@@ -96,7 +96,7 @@ class FeeInvoicesRepository implements FeeInvoicesRepositoryInterface
             DB::commit();
 
             toastr()->success(trans('messages.Update'));
-            return redirect()->route('Fees_Invoices.index');
+            return redirect()->route('FeeInvoices.index');
         } catch (\Exception $e) {
             DB::rollback();
             return redirect()->back()->withErrors(['error' => $e->getMessage()]);

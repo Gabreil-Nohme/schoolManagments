@@ -38,5 +38,13 @@ return [
     'Add_student'=>'اضافة طالب',
     'Show_student'=>'عرض الطلاب',
     'list_students'=>'قائمة الطلاب',
+    'Student_information'=>'معلومات الطلاب',
+    'Students_Promotions'=>'الترقيات',
+    'add_Promotion'=>'اضافة ترقية',
+    'list_Promotions'=>'لائحة الترقيات',
+    'Graduate_students'=>'التخرج',
+    'add_Graduate'=>'اضافة تخرج',
+    'list_Graduate'=>'الخريجين',
+
 
 ];

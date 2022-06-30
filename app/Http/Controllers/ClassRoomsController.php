@@ -18,10 +18,10 @@ class ClassRoomsController extends Controller
      */
     public function index()
     {
-        $grades=Grade::all();
-        $My_Classes=ClassRooms::all();
+        $grades = Grade::all();
+        $My_Classes = ClassRooms::all();
 
-        return view('pages.my Classes.MyClasses',compact('grades','My_Classes'));
+        return view('pages.my Classes.MyClasses', compact('grades', 'My_Classes'));
     }
 
     /**
@@ -43,26 +43,26 @@ class ClassRoomsController extends Controller
     public function store(ClassRoomRequest $request)
     {
 
-        $List_classes=$request->List_Classes;
+        $List_classes = $request->List_Classes;
 
 
-        try{
+        try {
 
-                foreach($List_classes as $list_class){
+            foreach ($List_classes as $list_class) {
 
-                    $My_Classes=new ClassRooms();
-                    $My_Classes->name_class=
-                    ['en'=>$list_class['name_en'],
-                    'ar'=>$list_class['name_ar']];
+                $My_Classes = new ClassRooms();
+                $My_Classes->name_class =
+                    [
+                        'en' => $list_class['name_en'],
+                        'ar' => $list_class['name_ar']
+                    ];
 
-                    $My_Classes->grades_id=$list_class['grade_id'];
-                    $My_Classes->save();
-
-        }
-        toastr()->success(__('grade_trans.success'));
-        return redirect()->route('classes.index');
-
-        }catch(\Exception $e){
+                $My_Classes->grades_id = $list_class['grade_id'];
+                $My_Classes->save();
+            }
+            toastr()->success(__('grade_trans.success'));
+            return redirect()->route('classes.index');
+        } catch (\Exception $e) {
             return redirect()->back()->withErrors(['error' => $e->getMessage()]);
         }
     }
@@ -102,14 +102,12 @@ class ClassRoomsController extends Controller
 
             $classRooms = ClassRooms::findOrFail($request->id);
             $classRooms->update([
-              $classRooms->name_class = ['ar' => $request->name_ar, 'en' => $request->name_en],
-              $classRooms->grades_id =$request->grade_id,
+                $classRooms->name_class = ['ar' => $request->name_ar, 'en' => $request->name_en],
+                $classRooms->grades_id = $request->grade_id,
             ]);
             toastr()->success(trans('messages.update_success'));
             return redirect()->route('classes.index');
-        }
-        catch
-        (\Exception $e) {
+        } catch (\Exception $e) {
             return redirect()->back()->withErrors(['error' => $e->getMessage()]);
         }
     }
@@ -122,26 +120,23 @@ class ClassRoomsController extends Controller
      */
     public function destroy(Request $request)
     {
-        $classRooms=ClassRooms::findOrFail($request->id)->delete();
+        $classRooms = ClassRooms::findOrFail($request->id)->delete();
         toastr()->error(trans('messages.delete_success'));
-            return redirect()->route('classes.index');
+        return redirect()->route('classes.index');
     }
 
     public function delete_all(Request $request)
     {
-        $delete_all_id=explode(",",$request->delete_all_id);
-        ClassRooms::whereIn('id',$delete_all_id)->delete();
+        $delete_all_id = explode(",", $request->delete_all_id);
+        ClassRooms::whereIn('id', $delete_all_id)->delete();
 
         toastr()->error(trans('messages.delete_success'));
         return redirect()->route('classes.index');
-
     }
     public function Filter_Classes(Request $request)
     {
-        $grades=Grade::all();
-        $details=ClassRooms::where('grades_id',$request->grade_id)->get();
-        return view('pages.my Classes.MyClasses',compact('grades','details'));
-
-
+        $grades = Grade::all();
+        $details = ClassRooms::where('grades_id', $request->grade_id)->get();
+        return view('pages.my Classes.MyClasses', compact('grades', 'details'));
     }
 }

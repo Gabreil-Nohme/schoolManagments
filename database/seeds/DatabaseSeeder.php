@@ -13,6 +13,8 @@ class DatabaseSeeder extends Seeder
      *
      * @return void
      */
+
+     //php artisan db:seed
     public function run()
     {
          $this->call(BloodTableSeeder::class);
@@ -21,7 +23,13 @@ class DatabaseSeeder extends Seeder
          $this->call(GradeTableSeeder::class);
          $this->call(GenderTableSeeder::class);
          $this->call(SpecializationTableSeeder::class);
-
+         $this->call(UsersSeeder::class);
+         $this->call(ClassesRoomSeeder::class);
+         $this->call(SectionSeeder::class);
+         $this->call(MyParentSeeder::class);
+         $this->call(TeachersSeeder::class);
+         $this->call(StudentsSeeder::class);
+         $this->call(SettingTableSedder::class);
 
     }
 }

@@ -36,5 +36,13 @@ return [
     'Add_student'=>'Add Student',
     'Show_student'=>'Show Students',
     'list_students'=>'list Students',
+    'Student_information'=>'Student Information',
+    'Students_Promotions'=>'Promotions',
+    'add_Promotion'=>'Add Promotion',
+    'list_Promotions'=>'List Promotions',
+    'Graduate_students'=>'Graduate Students',
+    'add_Graduate'=>'Add Graduate',
+    'list_Graduate'=>'list Graduate',
+
 
 ];

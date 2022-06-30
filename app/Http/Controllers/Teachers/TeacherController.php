@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Teachers;
 
+use App\Http\Controllers\Controller;
 use App\Models\Teacher;
 use App\Repository\TeacherRepository;
 use Illuminate\Http\Request;
@@ -12,6 +13,10 @@ class TeacherController extends Controller
     public function __construct(TeacherRepositoryInterface $Teacher)
     {
         $this->Teacher=$Teacher;
+    }
+    public function DashboardTeacher(){
+
+        return  $this->Teacher->DashboardTeacher();
     }
     public function index(){
        $Teachers= $this->Teacher->getAllTeachers();

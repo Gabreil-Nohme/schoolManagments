@@ -13,6 +13,7 @@ class CreateFeeInvoicesTable extends Migration
      */
     public function up()
     {
+        //الفواتير تأخذ من الرسوم
         Schema::create('fee_invoices', function (Blueprint $table) {
             $table->id();
             $table->date('invoice_date');

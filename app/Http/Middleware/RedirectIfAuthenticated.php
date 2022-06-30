@@ -16,12 +16,28 @@ class RedirectIfAuthenticated
      * @param  string|null  $guard
      * @return mixed
      */
-    public function handle($request, Closure $next, $guard = null)
+    public function handle($request, Closure $next )
     {
-        if (Auth::guard($guard)->check()) {
+        //[middleware] يستدعا هذا الملف عند استخدام
+        //يتم التحقق في حال كان المستخدم  له حق الدخول
+        //you can get these [web,student,teacher,parent]
+        //from config.auth [guards]
+        if (auth('web')->check()) {
             return redirect(RouteServiceProvider::HOME);
+        }
+        if (auth('student')->check()) {
+            return redirect(RouteServiceProvider::STUDENT);
+        }
+        if (auth('teacher')->check()) {
+            return redirect(RouteServiceProvider::TEACHER);
+        }
+        if (auth('parent')->check()) {
+            return redirect(RouteServiceProvider::PARENTS);
         }
 
         return $next($request);
+        //في حال لم يكن المستخدم لديه حق الوصول مثلا
+        //ف [student]بنسخ رابط خاص بال[admin] قام احد  حسابو
+        //منحط الشروط [middlware->authenticate] منروح ع
     }
 }

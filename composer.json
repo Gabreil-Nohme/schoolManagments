@@ -16,6 +16,7 @@
         "laravel/tinker": "^2.5",
         "laravel/ui": "*",
         "livewire/livewire": "*",
+        "macsidigital/laravel-zoom": "^5.0",
         "mcamara/laravel-localization": "^1.7",
         "spatie/laravel-translatable": "5.0",
         "yoeunes/toastr": "^1.2"

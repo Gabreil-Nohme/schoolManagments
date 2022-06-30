@@ -14,14 +14,11 @@ class Fee_invoice extends Model
 
     public function classroom()
     {
-        return $this->belongsTo('App\Models\Classroom', 'Classroom_id');
+        return $this->belongsTo('App\Models\ClassRooms', 'Classroom_id');
     }
 
 
-    public function section()
-    {
-        return $this->belongsTo('App\Models\Section', 'section_id');
-    }
+   
 
     public function student()
     {

@@ -63,8 +63,9 @@
                                                 <td>
 
                                                     <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#Delete_one{{$promotion->id}}">ارجاع الطالب</button>
-                                                   <a href="{{route('graduated.')}}"
+                                                   <a href="{{route('graduated.create')}}"
                                                     <button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#">تخرج الطالب</button>
+                                                   </a>
                                                 </td>
                                             </tr>
                                         @include('pages.students.promotions.Delete_all')

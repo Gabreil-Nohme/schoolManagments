@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use App\Http\Middleware\Authenticate;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Spatie\Translatable\HasTranslations;
-
-class Student extends Model
+use Illuminate\Foundation\Auth\User as Authenticatable;
+class Student extends Authenticatable
 {
     use SoftDeletes;
     use HasTranslations;
+
     public $translatable = ['name'];
     protected $guarded = [];
 
@@ -46,4 +48,15 @@ class Student extends Model
     {
         return $this->belongsTo('App\Models\My_Parent', 'parent_id');
     }
+    public function student_account()
+    {
+        return $this->hasMany('App\Models\StudentAccount');
+    }
+
+    public function attendance()
+    {
+        return $this->hasMany('App\Models\Attendance');
+    }
+
+
 }

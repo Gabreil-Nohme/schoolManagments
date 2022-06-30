@@ -28,7 +28,7 @@ class GraduatedController extends Controller
 
 
     public function store(Request $request)
-    {
+    {//نقوم بحذف الطالب لسلة المحذوفات ويبقى بالقاعدة
         return $this->Graduated->SoftDelete($request);
     }
 

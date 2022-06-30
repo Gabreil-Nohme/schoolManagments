@@ -22,7 +22,11 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    public const HOME = '/dashboard';
+    //put this routes in route
+    public const HOME = '/Dashboard';
+    public const TEACHER = 'teacher/Dashboard';
+    public const STUDENT = 'student/Dashboard';
+    public const PARENTS = 'parent/Dashboard';
 
     /**
      * Define your route model bindings, pattern filters, etc.
@@ -63,6 +67,22 @@ class RouteServiceProvider extends ServiceProvider
         ->middleware('web')
             ->namespace($this->namespace)
             ->group(base_path('routes/web.php'));
+
+            Route::prefix (LaravelLocalization::setLocale())
+        ->middleware('web')
+            ->namespace($this->namespace)
+            ->group(base_path('routes/student.php'));
+
+            Route::prefix (LaravelLocalization::setLocale())
+        ->middleware('web')
+            ->namespace($this->namespace)
+            ->group(base_path('routes/teacher.php'));
+
+            Route::prefix (LaravelLocalization::setLocale())
+        ->middleware('web')
+            ->namespace($this->namespace)
+            ->group(base_path('routes/parent.php'));
+
     }
 
     /**

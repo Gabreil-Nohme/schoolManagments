@@ -12,7 +12,7 @@ class CreateFeesTable extends Migration
      * @return void
      */
     public function up()
-    {
+    {   //الرسوم الدراسية
         Schema::create('fees', function (Blueprint $table) {
             $table->id();
             $table->string('title');

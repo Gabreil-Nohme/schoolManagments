@@ -7,6 +7,7 @@ use App\Models\Grade;
 use App\Models\Section;
 use App\Models\Teacher;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class SectionController extends Controller
 {
@@ -128,6 +129,9 @@ class SectionController extends Controller
     }
     public function getclasses($id)
     {
+        if(auth('teacher')){
+            $list_Classes=DB::table('teacher_section')->where('teacher_id',auth()->user()->id)->pluck('name_class','id');
+        }
         $list_Classes=ClassRooms::where('grades_id',$id)->pluck('name_class','id');
         return $list_Classes;
     }
