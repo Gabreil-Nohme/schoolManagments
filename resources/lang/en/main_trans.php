@@ -29,7 +29,7 @@ return [
     'Accounts'=>'Accounts',
     'Attendance'=>'Attendance',
     'Exams'=>'Exams',
-    'library'=>'Library',
+    'Library'=>'Library',
     'Onlineclasses'=>'Online classes',
     'Settings'=>'Settings',
     'Users'=>'Users',

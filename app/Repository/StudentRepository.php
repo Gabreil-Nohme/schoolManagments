@@ -89,7 +89,7 @@ public function Store_Student($request){
 
         }
 
-        catch (\Exception $e){
+        catch (Exception $e){
             DB::rollback();
             return redirect()->back()->withErrors(['error' => $e->getMessage()]);
         }
@@ -118,7 +118,7 @@ public function Update_Student($request)
         $Edit_Students->save();
         toastr()->success(trans('messages.Update'));
         return redirect()->route('addStudent.index');
-    } catch (\Exception $e) {
+    } catch (Exception $e) {
         return redirect()->back()->withErrors(['error' => $e->getMessage()]);
     }
 }

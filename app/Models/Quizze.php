@@ -4,13 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Spatie\Translatable\HasTranslations;
 
 class Quizze extends Model
 {
     use HasTranslations;
-    public $translatable=['name'];
-    protected $table='quizies';
+    public $translatable = ['name'];
+    protected $table = 'quizies';
 
     public function grade()
     {
@@ -29,8 +30,16 @@ class Quizze extends Model
         return $this->belongsTo(Section::class, 'section_id');
     }
 
-     public function quistion(): HasMany
-     {
-         return $this->hasMany(Question::class,);
-     }
+    public function quistion(): HasMany
+    {
+        return $this->hasMany(Question::class);
+    }
+    public function subject()
+    {
+        return $this->belongsTo(Subject::class, 'subject_id');
+    }
+    public function degree()
+    {
+        return $this->hasMany(Degree::class);
+    }
 }
