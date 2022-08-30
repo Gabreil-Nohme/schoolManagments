@@ -26,18 +26,19 @@
                         <div class="card-body text-center">
                             <img src="{{URL::asset('assets/images/teacher.png')}}"
                                  alt="avatar"
-                                 class="rounded-circle img-fluid" style="width: 205px;">
+                                 class="rounded-circle img-fluid" style="width: 245px;">
                             <h5 style="font-family: Cairo" class="my-3">{{$information->Name}}</h5>
                             <p class="text-muted mb-1">{{$information->email}}</p>
-                            <p class="text-muted mb-4">معلم</p>
+                            <p class="text-muted mb-4"> ملف طالب</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-8">
                     <div class="card mb-4">
                         <div class="card-body">
-                            <form action="{{route('profile.update','test')}}" method="post">
+                            <form action="{{route('profile-student.update','test')}}" method="post">
                                 @csrf
+                                @method('PUT')
                                 <div class="row">
                                     <div class="col-sm-3">
                                         <p class="mb-0">اسم المستخدم باللغة العربية</p>
@@ -46,7 +47,7 @@
                                     <div class="col-sm-9">
                                         <p class="text-muted mb-0">
                                             <input type="text" name="Name_ar"
-                                                   value="{{ $information->getTranslation('Name', 'ar') }}"
+                                                   value="{{ $information->getTranslation('name', 'ar') }}"
                                                    class="form-control">
                                         </p>
                                     </div>
@@ -59,7 +60,7 @@
                                     <div class="col-sm-9">
                                         <p class="text-muted mb-0">
                                             <input type="text" name="Name_en"
-                                                   value="{{ $information->getTranslation('Name', 'en') }}"
+                                                   value="{{ $information->getTranslation('name', 'en') }}"
                                                    class="form-control">
                                         </p>
                                     </div>

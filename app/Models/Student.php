@@ -58,5 +58,15 @@ class Student extends Authenticatable
         return $this->hasMany('App\Models\Attendance');
     }
 
+    public function fee_invoices()
+    {
+        return $this->hasMany(Fee_invoice::class);
+    }
+
+    public function receipts_student()
+    {
+        return $this->hasMany(ReceiptStudent::class);
+    }
+
 
 }

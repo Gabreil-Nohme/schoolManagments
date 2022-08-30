@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Quizies;
 
 use App\Http\Controllers\Controller;
+use App\Models\Degree;
+use App\Models\Quizze;
 use App\Repository\QuizzRepositoryInterface;
 use Illuminate\Http\Request;
 
@@ -51,5 +53,21 @@ class QuizzController extends Controller
     {
         return $this->Quizz->destroy($request);
     }
+
+    public function show_exam($id)
+    {
+        $degrees = Degree::where('quizze_id',$id)->get();
+        return view('pages.Teachers.Dashboard.quize.student_quizze',compact('degrees'));
+    }
+
+    public function re_exam( Request $request)
+    {
+        // return $request->degree_id;
+        Degree::findOrFail($request->degree_id)->delete();
+        return redirect()->back()->withErrors(['success'=>'تم اعادة الاختبار بنجاح']);
+    }
+
+
+
 
 }

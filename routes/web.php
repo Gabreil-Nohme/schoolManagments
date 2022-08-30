@@ -69,6 +69,8 @@ Route::group([
                  ////////////////////// Quizz
      Route::group(['namespace' => 'Quizies'], function () {
         Route::resource('Quizzes', 'QuizzController');
+        Route::get('Quizzes/show/students/{id}', 'QuizzController@show_exam')->name('Quizz.students_exam');
+        Route::post('Quizzes/re_exam', 'QuizzController@re_exam')->name('Quizz.re_exam');
 
     });
                   ////////////////////// Quistions

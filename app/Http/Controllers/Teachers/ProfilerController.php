@@ -16,9 +16,14 @@ class ProfilerController extends Controller
      }
      public function update(Request $request)
      {
-        $teacher=Teacher::findOrFail(auth()->user()->id);
-        $teacher->Name = ['en' => $request->Name_en, 'ar' => $request->Name_ar];
+         $teacher=Teacher::findOrFail(auth()->user()->id);
+        if (
+            $teacher->getTranslation('Name', 'ar') != $request->Name_ar  ||
+            $teacher->getTranslation('Name', 'en') != $request->Name_en
+        ) {
 
+        $teacher->Name = ['en' => $request->Name_en, 'ar' => $request->Name_ar];
+        }
         if(!empty($request->password))
             $teacher->password=Hash::make($request->password);
 

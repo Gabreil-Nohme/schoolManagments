@@ -13,16 +13,27 @@
         <li class="mt-10 mb-10 text-muted pl-4 font-medium menu-title">{{trans('main_trans.Programname')}} </li>
 
 
-        <!-- الامتحانات-->
+        <!-- sons-->
         <li>
-            <a href="{{route('ExamStudent.index')}}"><i class="fas fa-book-open"></i><span
-                    class="right-nav-text">الامتحانات</span></a>
+            <a href="{{route('sons.index')}}"><i class="fas fa-book-open"></i><span
+                    class="right-nav-text">الابناء</span></a>
+        </li>
+
+        <!-- attendace-->
+        <li>
+            <a href="{{route('sons.attendance')}}"><i class="fas fa-book-open"></i><span
+                    class="right-nav-text">الحضور والغياب</span></a>
+        </li>
+        <!-- fees-->
+        <li>
+            <a href="{{route('sons.fees')}}"><i class="fas fa-book-open"></i><span
+                    class="right-nav-text"> الفواتير الدراسية</span></a>
         </li>
 
 
         <!-- Settings-->
         <li>
-            <a href="{{route('profile-student.index')}}"><i class="fas fa-id-card-alt"></i><span
+            <a href="{{route('parents.profile.index')}}"><i class="fas fa-id-card-alt"></i><span
                     class="right-nav-text">الملف الشخصي</span></a>
         </li>
 

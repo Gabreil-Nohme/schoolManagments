@@ -16,8 +16,8 @@ class MyParentSeeder extends Seeder
     {
         DB::table('my__parents')->delete();
         My_Parent::create([
-            'Email'=>'baba@gmail.com',
-            'Password'=>Hash::make('1234567890gg'),
+            'email'=>'baba@gmail.com',
+            'password'=>Hash::make('1234567890gg'),
             'Name_Father'=>['ar'=>'جون','en'=>'john'],
             'National_ID_Father'=>1234567890,
             'Passport_ID_Father'=>1234567890,

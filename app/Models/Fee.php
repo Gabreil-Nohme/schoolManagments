@@ -17,7 +17,7 @@ class Fee extends Model
 
     public function grade()
     {
-        return $this->belongsTo('App\Models\Grade', 'Grade_id');
+        return $this->belongsTo(Grade::class, 'Grade_id');
     }
 
 
@@ -25,6 +25,6 @@ class Fee extends Model
 
     public function classroom()
     {
-        return $this->belongsTo('App\Models\Classroom', 'Classroom_id');
+        return $this->belongsTo(ClassRooms::class, 'Classroom_id');
     }
 }
